@@ -1,0 +1,77 @@
+{
+  "name": "@migueddev/schwab-client",
+  "author": "Miguel Angel Durán Romero",
+  "description": "Unofficial Schwab API for trading and market data (TypeScript/Node.js)",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migueddev/schwab-client.git"
+  },
+  "bugs": {
+    "url": "https://github.com/migueddev/schwab-client/issues"
+  },
+  "homepage": "https://github.com/migueddev/schwab-client#readme",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "prettier": "prettier --write .",
+    "lint": "eslint \"*/**/*.{js,ts}\" --fix",
+    "release": "standard-version",
+    "release:patch": "standard-version --release-as patch",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "prepare": "husky",
+    "commit:pre": "npm run prettier && npm run lint",
+    "commitlint": "commitlint --edit",
+    "lint-staged": "lint-staged --debug"
+  },
+  "keywords": [
+    "schwab",
+    "trading",
+    "market-data",
+    "api",
+    "typescript",
+    "nodejs"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.35.0",
+    "@types/speakeasy": "^2.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "^3.6.2",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.0"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "puppeteer": "^24.20.0",
+    "speakeasy": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.20.4"
+  }
+}

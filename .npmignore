@@ -1,0 +1,27 @@
+# Folders that shouldn't go to npm
+src/
+node_modules/
+dist/tests/
+tests/
+coverage/
+.husky/
+
+# Configuration files
+*.log
+*.tsbuildinfo
+tsconfig.json
+tsconfig.*.json
+package-lock.json
+
+# Configuring development tools
+.eslint*
+.prettier*
+.lintstagedrc
+.commitlint*
+.release.config.js
+.gitignore
+.npmignore
+
+# Tokens and secrets
+tokens.json
+.env
