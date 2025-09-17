@@ -28,7 +28,7 @@ export class TraderAPI extends BaseAPI {
    * @param params Optional query parameters specifying fields to return (e.g., positions)
    * @returns Promise resolving to account details
    */
-  public async getAllAccountsDetails(params: AccountQueryParams) {
+  public async getAllAccountsDetails(params?: AccountQueryParams) {
     return this.axios.get('/trader/v1/accounts', {
       params: this.paramsParser(params),
     });
@@ -40,7 +40,7 @@ export class TraderAPI extends BaseAPI {
    * @param params Optional query parameters specifying fields to return (e.g., positions)
    * @returns Promise resolving to account details
    */
-  public async getAccountDetails(accountHash: string, params: AccountQueryParams) {
+  public async getAccountDetails(accountHash: string, params?: AccountQueryParams) {
     return this.axios.get(`/trader/v1/accounts/${accountHash}`, {
       params: this.paramsParser(params),
     });
