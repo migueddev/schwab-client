@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/migueddev/schwab-client/compare/v1.0.1...v1.0.2) (2025-09-18)
+
+### Features
+
+- **puppeteer:** add global timeout configurable via PUPPETEER_TIMEOUT env var ([b54be83](https://github.com/migueddev/schwab-client/commit/b54be83acf994f1bbc18d9d1404d8e522e342820))
+
 ### [1.0.1](https://github.com/migueddev/schwab-client/compare/v1.0.0...v1.0.1) (2025-09-17)
 
 ### Bug Fixes
