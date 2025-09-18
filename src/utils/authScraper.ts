@@ -1,6 +1,7 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
 import speakeasy from 'speakeasy';
 import { Logger } from './logger';
+import { PUPPETEER_TIMEOUT } from '../configs';
 
 export interface AuthScraperOptions {
   baseUrl: string;
@@ -75,6 +76,8 @@ export class AuthScraper {
       });
 
       const page: Page = await browser.newPage();
+      page.setDefaultTimeout(PUPPETEER_TIMEOUT);
+      page.setDefaultNavigationTimeout(PUPPETEER_TIMEOUT);
       await page.setUserAgent(
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
       );

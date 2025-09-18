@@ -1,4 +1,5 @@
 export * from './client';
+export * from './configs/environments';
 export * from './modules/authAPI';
 export * from './modules/baseAPI';
 export * from './modules/traderAPI';
