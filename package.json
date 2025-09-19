@@ -2,7 +2,7 @@
   "name": "@migueddev/schwab-client",
   "author": "Miguel Angel Durán Romero",
   "description": "Unofficial Schwab API for trading and market data (TypeScript/Node.js)",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
