@@ -120,6 +120,7 @@ export class SchwabClient {
     const storedTokens = await this.tokenStorage.read();
     if (storedTokens) {
       this.applyTokenFile(storedTokens);
+      this.setAuthorizationHeader(this.accessToken);
 
       const refreshAt = this.tokenRefreshedAt + this.accessTokenExpiresInMs - this.refreshMarginMs;
 
@@ -138,7 +139,6 @@ export class SchwabClient {
       this.logger.log(LogLevel.Warn, 'No tokens found, starting authorization code flow...');
       await this.requestTokenByAuthorizationCode();
     }
-    this.setAuthorizationHeader(this.accessToken);
   }
 
   private setAuthorizationHeader(token: string) {
@@ -178,6 +178,7 @@ export class SchwabClient {
     };
 
     this.applyTokenFile(tokenFile);
+    this.setAuthorizationHeader(this.accessToken);
     await this.tokenStorage.write(tokenFile);
     this.scheduleTokenRefresh(this.accessTokenExpiresInMs - this.refreshMarginMs);
   }
@@ -203,6 +204,7 @@ export class SchwabClient {
       };
 
       this.applyTokenFile(tokenFile);
+      this.setAuthorizationHeader(this.accessToken);
       await this.tokenStorage.write(tokenFile);
       this.scheduleTokenRefresh(this.accessTokenExpiresInMs - this.refreshMarginMs);
     } catch (error) {
