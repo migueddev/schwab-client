@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/migueddev/schwab-client/compare/v1.0.3...v1.1.0) (2025-10-05)
+
+### Features
+
+- add optional onRefresh callback to scheduleTokenRefresh method ([1757b17](https://github.com/migueddev/schwab-client/commit/1757b177bf968fb058db0ce73f0eb3e02b0c07a4))
+
 ### [1.0.3](https://github.com/migueddev/schwab-client/compare/v1.0.2...v1.0.3) (2025-09-19)
 
 ### Bug Fixes
