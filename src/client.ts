@@ -27,6 +27,7 @@ export class SchwabClient {
   private readonly appKey: string;
   private readonly appSecret: string;
   public readonly callbackUrl: string;
+  public readonly onRefresh?: (tokenFile: OAuthTokenFile) => void;
   private readonly refreshMarginMs = 5 * 60 * 1000;
 
   private readonly logger: Logger;
@@ -44,6 +45,8 @@ export class SchwabClient {
     this.appKey = options.appKey;
     this.appSecret = options.appSecret;
     this.callbackUrl = options.callbackUrl;
+
+    this.onRefresh = options.onRefresh;
 
     this.axios = axios.create({
       baseURL: this.baseApiUrl,
@@ -154,6 +157,10 @@ export class SchwabClient {
     this.refreshTimer = setTimeout(async () => {
       this.logger.log(LogLevel.Info, 'Refreshing token automatically...');
       await this.requestTokenByRefreshToken();
+      if (this.onRefresh && typeof this.onRefresh === 'function') {
+        const tokenFile = await this.tokenStorage.read();
+        if (tokenFile) this.onRefresh(tokenFile);
+      }
     }, delayMs);
   }
 
